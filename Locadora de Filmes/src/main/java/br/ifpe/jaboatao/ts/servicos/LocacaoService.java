@@ -38,6 +38,7 @@ public class LocacaoService {
 		
 		//Verificação
 		System.out.println(locacao.getValorLocacao());
-		System.out.println("Funcionando.");
+		System.out.println(locacao.getDataLocacao());
+		System.out.println(locacao.getDataRetorno());
 	}
 }
