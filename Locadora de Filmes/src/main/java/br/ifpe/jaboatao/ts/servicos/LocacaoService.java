@@ -28,6 +28,16 @@ public class LocacaoService {
 	}
 
 	public static void main(String[] args) {
+		//cenário
+		LocacaoService service = new LocacaoService();
+		Usuario usuario = new Usuario("Maria");
+		Filme filme = new Filme("Título 01", 1, 10.00);
+		
+		//Ação
+		Locacao locacao = service.alugarFilme(usuario, filme);
+		
+		//Verificação
+		System.out.println(locacao.getValorLocacao());
 		System.out.println("Funcionando.");
 	}
 }
