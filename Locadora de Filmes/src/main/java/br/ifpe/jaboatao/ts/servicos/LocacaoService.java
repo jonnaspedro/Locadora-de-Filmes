@@ -30,15 +30,29 @@ public class LocacaoService {
 	public static void main(String[] args) {
 		//cenário
 		LocacaoService service = new LocacaoService();
-		Usuario usuario = new Usuario("Maria");
-		Filme filme = new Filme("Título 01", 1, 10.00);
+		Usuario usuario = new Usuario("Jonnas");
+		Filme filme = new Filme("Velozes e Furiosos", 1, 10.00);
 		
 		//Ação
 		Locacao locacao = service.alugarFilme(usuario, filme);
 		
 		//Verificação
-		System.out.println(locacao.getValorLocacao());
-		System.out.println(locacao.getDataLocacao());
-		System.out.println(locacao.getDataRetorno());
+		System.out.println(locacao.getValorLocacao() == 10);
+		System.out.println(DataUtils.boDatasIguais(locacao.getDataLocacao(), new Date()));
+		System.out.println(DataUtils.boDatasIguais(locacao.getDataRetorno(), DataUtils.incrementarQntDias(1)));
+		
+		//Exercício - Realizar os seguintes testes:
+		
+		//Nome do usuáro
+		System.out.println(locacao.getUsuario().getNome() == "Jonnas");
+		
+		//Título do filme
+		
+		System.out.println(locacao.getFilme().getTitulo() == "Velozes e Furiosos");
+		
+		//Estoque do filme
+		
+		System.out.println(locacao.getFilme().getEstoque() == 1 );
+		
 	}
 }
